@@ -1,5 +1,6 @@
 const pokemon = ['charmander', 'bulbasaur', 'squirtle']
 const pokemonIDs = ['001', '004', '007']
+const containerDiv = document.querySelector('#container')
 
 // DOM = Document Object Model
 // loop over every ID
@@ -17,5 +18,5 @@ pokemonIDs.map((id) => {
     let img = document.createElement('img')
     img.src = imgUrl
     div.append(img)
-    document.body.append(div)
+    containerDiv.append(div)
 })
