@@ -15,7 +15,7 @@ const containerDiv = document.querySelector('#container')
 // gets the element with id of new-pokemon-btn, returns the btn object
 const newBtn = document.querySelector('#new-pokemon-btn')
 const rosterDiv = document.querySelector('#roster')
-const rmvBtn = document.querySelector('#remove-new-pokemon')   //adding variable for the remove button
+let rmvBtn = document.querySelector('#remove-new-pokemon')   //adding variable for the remove button
 
 
 // function fixes user input
@@ -67,7 +67,13 @@ newBtn.addEventListener('click', async () => {                  //listener that 
 
 
             position.append(img, h3)                             //puts the image into its position in the grid
-            userRoster.push(num)                             //saves the pokemon into the roster
+            userRoster.push(num)                                 //saves the pokemon into the roster
+
+            let rDiv = document.getElementById('removeDiv')      //variable targeting the remove button div
+            rDiv.innerHTML = ''                                  //erases the remove button
+            rmvBtn = document.createElement('button')            //creates a replacement remove button without the baggage
+            rmvBtn.innerText = 'REMOVE'                          //puts the text back on the remove button
+            rDiv.append(rmvBtn)                                  //appends the rmvBtn to the rDiv
 
             rmvBtn.addEventListener('click', () => {                       //listener that adds functionality to the 'remove' button
                 if (userRoster.length > 0) {
