@@ -75,6 +75,7 @@ newBtn.addEventListener('click', async () => {                  //listener that 
             rmvBtn.innerText = 'REMOVE'                          //puts the text back on the remove button
             rDiv.append(rmvBtn)                                  //appends the rmvBtn to the rDiv
 
+
             rmvBtn.addEventListener('click', () => {                       //listener that adds functionality to the 'remove' button
                 if (userRoster.length > 0) {
                     let permission = confirm('Are you sure you want to delete your last Pokemon?')
